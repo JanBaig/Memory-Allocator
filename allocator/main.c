@@ -1,10 +1,9 @@
 
 #include <stdio.h>
-#include "allocators.h"
 
 int main() {
-	
-	printf("Testing\n");
+
+	printf("Testing Here\n");
 	return 0;
 }
 

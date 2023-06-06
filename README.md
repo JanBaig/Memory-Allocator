@@ -1,6 +1,6 @@
 # Memory-Allocator
 
-A Memory Allocator that implements the core C functions `malloc`, `calloc` and `free`
+A Memory Allocator that implements the core C functions - `malloc`, `calloc` and `free`
 
 The implementations of `malloc`, `calloc` and `free` mainly rely on either the `sbrk/brk` or `mmap` system calls in a UNIX system (`VirtualAlloc` for Windows). The system call `void *sbrk(intptr_t increment);` moves the program break by *increment* amount of bytes. 
 

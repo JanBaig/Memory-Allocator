@@ -14,19 +14,15 @@ void* mallocImp(size_t size);
 
 void* callocImp(size_t number, size_t size);
 
-block* fusion(block* b);
-
-block* get_block(void* p);
-
-block* get_block(void* p);
-
-int valid_addr(void* p);
-
 void freeImp(void* p);
 
 void* reallocImp(void* p, size_t size);
 
-void copy_block(block* src, block* dst);
+block* fusion(block* b);
+
+block* get_block(void* p);
+
+int valid_addr(void* p);
 
 void copy_block(block* src, block* dst);
 

@@ -27,8 +27,9 @@ As `malloc` is used to request some memory, the system breakpoint is moved to en
 </br>
 
 ```
-Note: This project was done following a simple tutorial by Marwan Burelle (site is currently down) and is yet
-to be throughly tested. I may update the project in the future to include testing and focus more on the optimization
-of the functions. Aside from that, I've found it quite eye-opening how complicated concepts may seem before
-diving deep and disecting them. Projects like this help make magic less magical and more understandable💡  
+Note: This project was done following a simple tutorial by Marwan Burelle (site is currently down)
+and is yet to be throughly tested. I may update the project in the future to include testing and
+focus more on the optimization of the functions. Aside from that, I've found it quite eye-opening
+how complicated concepts may seem before diving deep and disecting them. Projects like this help
+make magic less magical and more understandable💡  
 ```

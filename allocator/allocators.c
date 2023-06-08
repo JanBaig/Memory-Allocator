@@ -31,7 +31,7 @@ void* mallocImp(size_t size) {
 		if (!b) { return NULL; }
 		base = b; 
 	} 
-	return b->data;
+	return b->data; // starting address of block's data region
 }
 
 void* callocImp(size_t number, size_t size) {
@@ -40,7 +40,7 @@ void* callocImp(size_t number, size_t size) {
 	size_t* new = mallocImp(number * size);
 
 	if (new) {
-		s4 = align4(number * size) << 2; // increasing size since extending the new block also results in initialized memorry
+		s4 = align4(number * size);
 		for (i=0; i<s4; i++) {
 			new[i] = 0;
 		}
@@ -69,10 +69,9 @@ void* reallocImp(void* p, size_t size) {
 				if (b->size - s >= (METADATA_SIZE + 4)) { split_block(b, s); }
 
 			} else {
-				
 				newp = mallocImp(s);
 				if (!newp) { return NULL; }
-				new = get_block(newp);
+				new = get_block(newp); // we're given the address of the data segment, we need to find the starting address of the block
 				copy_block(b, new);
 				freeImp(p); // free the old one
 				return newp;
@@ -105,7 +104,7 @@ void freeImp(void* p) {
 block* extend_heap(block* last, size_t s) {
 	
 	block* b = sbrk(0); // address returned will hold a block
-	int sb = (int)sbrk( METADATA_SIZE + s);
+	int sb = (int)sbrk( METADATA_SIZE + s); // increment program break
 
 	if (sb == -1) { return (NULL); } // error returned
 	b->size = s;
